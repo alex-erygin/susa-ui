@@ -1,0 +1,22 @@
+<kendo-grid
+  [data] = data
+  [sortable]="{
+      allowUnsort: true,
+      mode: 'multiple'
+  }"
+
+  [sort]="sort"
+  (sortChange)="sortChange($event)">
+  <kendo-grid-column field="name" title="Задача" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="description" title="Описание" [width]="300"></kendo-grid-column>
+  <kendo-grid-column field="status" title="Статус" [width]="200"></kendo-grid-column>
+  <kendo-grid-column field="customer" title="Заказчик" [width]="120"></kendo-grid-column>
+  <kendo-grid-column field="readiness" title="%" [width]="50"></kendo-grid-column>
+  <kendo-grid-column field="started" title="Дата старта" [width]="120"></kendo-grid-column>
+  <kendo-grid-column field="plannedComplete" title="План. окончание" [width]="120"></kendo-grid-column>
+  <kendo-grid-column field="factComplete" title="Факт. окончание" [width]="120"></kendo-grid-column>
+  <kendo-grid-column field="url" title="URL" [width]="200"></kendo-grid-column>
+</kendo-grid>
+
+
+<router-outlet></router-outlet>
