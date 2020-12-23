@@ -12,10 +12,21 @@ export default class RoadmapItem{
     this.readiness = item.readiness
     this.url = item.url
 
-    if (item.created) this.created = new Date(item.created)
-    if (item.started) this.started = new Date(item.started)
-    if (item.plannedComplete) this.plannedComplete = new Date(item.plannedComplete)
-    if (item.factComplete) this.factComplete = new Date(item.factComplete)
+    if (item.created) {
+      this.created = new Date(item.created);
+    }
+
+    if (item.started) {
+      this.started = new Date(item.started);
+    }
+
+    if (item.plannedComplete) {
+      this.plannedComplete = new Date(item.plannedComplete);
+    }
+
+    if (item.factComplete) {
+      this.factComplete = new Date(item.factComplete);
+    }
   }
 
   id: number

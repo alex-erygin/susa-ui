@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+
 
 
 
@@ -18,7 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     GridModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
