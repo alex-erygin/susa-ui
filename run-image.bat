@@ -1,0 +1,1 @@
+ docker run -it -p 9000:80 susanin-front:0.0.0
