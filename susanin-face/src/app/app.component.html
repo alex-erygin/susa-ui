@@ -1,16 +1,24 @@
-<div style="height: 400px; background-color: gray">
-  <kendo-chart [title]="{ text: 'Timeline' }">
+<div >
+  <kendo-chart style="height: 900px; width:100%">
+    <kendo-chart-legend position="bottom" orientation="horizontal">
+    </kendo-chart-legend>
     <kendo-chart-series>
       <kendo-chart-series-item type="scatter"
                                [data]="chart_data"
                                noteTextField="point_label"
-                               xField="date" yField="value">
+                               xField="date"
+                               yField="value" [notes]="dataNoteStyle"
+      >
+        <kendo-chart-series-item-labels [content]="labelContent">
+
+        </kendo-chart-series-item-labels>
       </kendo-chart-series-item>
 
       <kendo-chart-series-item type="scatter"
                                noteTextField="point_label"
                                [data]="today"
-                               xField="date" yField="value">
+                               xField="date"
+                               yField="value" [notes]="todayNoteStyle">
       </kendo-chart-series-item>
 
     </kendo-chart-series>
@@ -32,15 +40,14 @@
   }"
 
   [sort]="sort"
-  [height]="550"
   (sortChange)="sortChange($event)">
   <kendo-grid-column field="name" title="Задача" [width]="150"></kendo-grid-column>
-  <kendo-grid-column field="description" title="Описание" [width]="300"></kendo-grid-column>
+<!--  <kendo-grid-column field="description" title="Описание" [width]="300"></kendo-grid-column>-->
 <!--  <kendo-grid-column field="status" title="Статус" [width]="200"></kendo-grid-column>-->
 <!--  <kendo-grid-column field="customer" title="Заказчик" [width]="120"></kendo-grid-column>-->
   <kendo-grid-column field="readiness" title="%" [width]="50"></kendo-grid-column>
 <!--  <kendo-grid-column field="started" title="Дата старта" [width]="120"></kendo-grid-column>-->
-  <kendo-grid-column field="plannedComplete" title="План. окончание" [width]="120"></kendo-grid-column>
+  <kendo-grid-column field="plannedDateString" title="План. окончание" [width]="120"></kendo-grid-column>
 <!--  <kendo-grid-column field="factComplete" title="Факт. окончание" [width]="120"></kendo-grid-column>-->
   <kendo-grid-column field="url" title="URL" [width]="200"></kendo-grid-column>
 </kendo-grid>

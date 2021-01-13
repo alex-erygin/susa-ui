@@ -1,4 +1,5 @@
 import RoadmapItemDto from "./RoadmapItemDto";
+const options = {  year: 'numeric', month: 'numeric', day: 'numeric' }
 
 export default class RoadmapItem{
   constructor(private item: RoadmapItemDto) {
@@ -11,6 +12,7 @@ export default class RoadmapItem{
     this.approved = item.approved
     this.readiness = item.readiness
     this.url = item.url
+    this.plannedDateString = ""
 
     if (item.created) {
       this.created = new Date(item.created);
@@ -22,6 +24,7 @@ export default class RoadmapItem{
 
     if (item.plannedComplete) {
       this.plannedComplete = new Date(item.plannedComplete);
+      this.plannedDateString = this.plannedComplete.toLocaleDateString("ru-RU", options)
     }
 
     if (item.factComplete) {
@@ -42,4 +45,5 @@ export default class RoadmapItem{
   plannedComplete?: Date
   factComplete?: Date
   url: string
+  plannedDateString: string
 }
